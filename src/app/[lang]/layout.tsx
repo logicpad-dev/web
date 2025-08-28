@@ -8,8 +8,8 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: 'Localpad Launchpad',
-  description: 'A modern website for the Localpad software development startup.',
+  title: 'Logicpad Launchpad',
+  description: 'A modern website for the Logicpad software development startup.',
 };
 
 export default function RootLayout({

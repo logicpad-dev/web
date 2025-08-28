@@ -62,7 +62,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href={`/${lang}/#home`} className="flex items-center gap-2 font-headline text-2xl font-bold" onClick={() => setIsMenuOpen(false)}>
           <Mountain className="h-7 w-7 text-primary" />
-          <span className="text-foreground">Localpad</span>
+          <span className="text-foreground">Logicpad</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map(link => (
@@ -109,7 +109,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
               <div className="flex flex-col gap-6 p-6">
                 <Link href={`/${lang}/#home`} className="flex items-center gap-2 font-headline text-2xl font-bold" onClick={() => setIsMenuOpen(false)}>
                   <Mountain className="h-6 w-6 text-primary" />
-                  <span>Localpad</span>
+                  <span>Logicpad</span>
                 </Link>
                 <nav className="flex flex-col gap-4">
                   {navLinks.map(link => (

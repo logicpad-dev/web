@@ -12,7 +12,7 @@
     "title": "Building Digital Excellence for",
     "subtitle": "We build beautiful, fast, and secure software solutions to help your business grow. From concept to launch, we're your dedicated development partner.",
     "ctaProject": "Start a Project",
-    "ctaWork": "View Our Work"
+    "ctaWork": "See Our Work"
   },
   "services": {
     "tag": "Our Services",
@@ -20,19 +20,19 @@
     "subtitle": "We offer a complete suite of software development services to bring your ideas to life.",
     "web": {
       "title": "Web Development",
-      "description": "High-performance websites and web applications using modern tech like React, Next.js, and Node.js."
+      "description": "We build responsive, high-performing websites and web applications tailored to your business needs."
     },
     "mobile": {
       "title": "Mobile App Development",
-      "description": "Crafting beautiful and intuitive native mobile apps for iOS and Android that deliver seamless user experiences."
+      "description": "From iOS to Android, we create seamless mobile experiences that connect you with your users."
     },
     "design": {
       "title": "UI/UX Design",
-      "description": "Engaging and user-friendly interfaces that are both aesthetically pleasing and highly functional."
+      "description": "Our design team creates intuitive and beautiful interfaces that are a joy to use."
     },
     "cloud": {
-      "title": "Cloud & DevOps",
-      "description": "Leveraging cloud platforms like Firebase and AWS to build scalable infrastructure and streamline pipelines."
+      "title": "Cloud Solutions",
+      "description": "We provide cloud infrastructure and deployment solutions to scale your applications."
     }
   },
   "portfolio": {
@@ -46,26 +46,26 @@
       "invoice": {
         "title": "Invoice App",
         "category": "Web",
-        "description": "A web-based application for creating, sending, and managing invoices with PDF generation.",
-        "tags": ["React", "Node.js", "PDF Generation"]
+        "description": "A web-based application for creating and managing invoices, streamlining the billing process for small businesses.",
+        "tags": ["React", "Node.js", "PostgreSQL"]
       },
       "trash": {
         "title": "Trash Management System",
         "category": "Web",
-        "description": "A system to optimize waste collection routes and schedules using real-time data and mapping.",
-        "tags": ["Next.js", "Firebase", "Mapping API"]
+        "description": "An IoT solution for optimizing waste collection routes and schedules in urban environments.",
+        "tags": ["IoT", "Next.js", "Firebase"]
       },
       "appDev": {
-        "title": "App Development",
+        "title": "Mobile Banking App",
         "category": "Mobile",
-        "description": "Custom mobile application development for both iOS and Android platforms.",
-        "tags": ["React Native", "iOS", "Android"]
+        "description": "A secure and user-friendly mobile banking application for a leading financial institution.",
+        "tags": ["iOS", "Android", "Kotlin"]
       },
       "webDesign": {
-        "title": "Web Design",
+        "title": "E-commerce Website Design",
         "category": "Web",
-        "description": "Designing beautiful and intuitive user interfaces and experiences for web applications.",
-        "tags": ["Figma", "UI/UX", "CSS Grid"]
+        "description": "A complete redesign of an e-commerce platform to improve user experience and increase conversions.",
+        "tags": ["UI/UX", "Figma", "Shopify"]
       }
     }
   },
@@ -75,19 +75,19 @@
     "subtitle": "We'd love to hear from you. Fill out the form and we'll get back to you as soon as possible.",
     "form": {
       "name": "Name",
-      "namePlaceholder": "John Doe",
+      "namePlaceholder": "Your Name",
       "email": "Email",
-      "emailPlaceholder": "john@example.com",
-      "help": "How can we help?",
-      "helpPlaceholder": "Describe your project or inquiry...",
-      "service": "Interested Service",
+      "emailPlaceholder": "your.email@example.com",
+      "help": "How can we help you?",
+      "helpPlaceholder": "Tell us about your project...",
+      "service": "Service of Interest",
       "selectService": "Select a service",
-      "submit": "Send Inquiry",
-      "submitting": "Sending...",
-      "successTitle": "Success!",
-      "successMessage": "Thank you for your inquiry! We will get back to you shortly.",
-      "errorTitle": "Error",
-      "errorMessage": "Sorry, there was an error sending your message. Please try again later."
+      "submit": "Submit Inquiry",
+      "submitting": "Submitting...",
+      "successTitle": "Inquiry Sent!",
+      "successMessage": "Thank you for reaching out. We'll get back to you shortly.",
+      "errorTitle": "Submission Failed",
+      "errorMessage": "There was an error sending your message. Please try again."
     }
   },
   "footer": {

@@ -20,19 +20,19 @@
     "subtitle": "Ofrecemos un conjunto completo de servicios de desarrollo de software para dar vida a tus ideas.",
     "web": {
       "title": "Desarrollo Web",
-      "description": "Sitios web y aplicaciones web de alto rendimiento utilizando tecnología moderna como React, Next.js y Node.js."
+      "description": "Construimos sitios web y aplicaciones web responsivas y de alto rendimiento adaptadas a las necesidades de su negocio."
     },
     "mobile": {
       "title": "Desarrollo de Aplicaciones Móviles",
-      "description": "Creación de aplicaciones móviles nativas hermosas e intuitivas para iOS y Android que ofrecen experiencias de usuario fluidas."
+      "description": "Desde iOS hasta Android, creamos experiencias móviles fluidas que lo conectan con sus usuarios."
     },
     "design": {
       "title": "Diseño UI/UX",
-      "description": "Interfaces atractivas y fáciles de usar que son estéticamente agradables y altamente funcionales."
+      "description": "Nuestro equipo de diseño crea interfaces intuitivas y hermosas que son un placer de usar."
     },
     "cloud": {
-      "title": "Nube y DevOps",
-      "description": "Aprovechando plataformas en la nube como Firebase y AWS para construir infraestructura escalable y optimizar los procesos."
+      "title": "Soluciones en la Nube",
+      "description": "Ofrecemos infraestructura en la nube y soluciones de implementación para escalar sus aplicaciones."
     }
   },
   "portfolio": {
@@ -46,26 +46,26 @@
       "invoice": {
         "title": "Aplicación de Facturas",
         "category": "Web",
-        "description": "Una aplicación web para crear, enviar y gestionar facturas con generación de PDF.",
-        "tags": ["React", "Node.js", "Generación de PDF"]
+        "description": "Una aplicación web para crear y gestionar facturas, agilizando el proceso de facturación para pequeñas empresas.",
+        "tags": ["React", "Node.js", "PostgreSQL"]
       },
       "trash": {
-        "title": "Sistema de Gestión de Basura",
+        "title": "Sistema de Gestión de Residuos",
         "category": "Web",
-        "description": "Un sistema para optimizar las rutas y horarios de recolección de residuos utilizando datos y mapas en tiempo real.",
-        "tags": ["Next.js", "Firebase", "API de Mapas"]
+        "description": "Una solución de IoT para optimizar las rutas y horarios de recogida de residuos en entornos urbanos.",
+        "tags": ["IoT", "Next.js", "Firebase"]
       },
       "appDev": {
-        "title": "Desarrollo de Aplicaciones",
-        "category": "Móvil",
-        "description": "Desarrollo de aplicaciones móviles personalizadas para plataformas iOS y Android.",
-        "tags": ["React Native", "iOS", "Android"]
+        "title": "App de Banca Móvil",
+        "category": "Mobile",
+        "description": "Una aplicación de banca móvil segura y fácil de usar para una institución financiera líder.",
+        "tags": ["iOS", "Android", "Kotlin"]
       },
       "webDesign": {
-        "title": "Diseño Web",
+        "title": "Diseño de Sitio E-commerce",
         "category": "Web",
-        "description": "Diseño de interfaces y experiencias de usuario hermosas e intuitivas para aplicaciones web.",
-        "tags": ["Figma", "UI/UX", "CSS Grid"]
+        "description": "Un rediseño completo de una plataforma de comercio electrónico para mejorar la experiencia del usuario y aumentar las conversiones.",
+        "tags": ["UI/UX", "Figma", "Shopify"]
       }
     }
   },
@@ -75,19 +75,19 @@
     "subtitle": "Nos encantaría saber de ti. Completa el formulario y nos pondremos en contacto contigo lo antes posible.",
     "form": {
       "name": "Nombre",
-      "namePlaceholder": "Juan Pérez",
+      "namePlaceholder": "Tu Nombre",
       "email": "Correo Electrónico",
-      "emailPlaceholder": "juan@ejemplo.com",
+      "emailPlaceholder": "tu.correo@ejemplo.com",
       "help": "¿Cómo podemos ayudarte?",
-      "helpPlaceholder": "Describe tu proyecto o consulta...",
+      "helpPlaceholder": "Cuéntanos sobre tu proyecto...",
       "service": "Servicio de Interés",
       "selectService": "Selecciona un servicio",
       "submit": "Enviar Consulta",
       "submitting": "Enviando...",
-      "successTitle": "¡Éxito!",
-      "successMessage": "¡Gracias por tu consulta! Nos pondremos en contacto contigo en breve.",
-      "errorTitle": "Error",
-      "errorMessage": "Lo sentimos, hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde."
+      "successTitle": "¡Consulta Enviada!",
+      "successMessage": "Gracias por contactarnos. Te responderemos en breve.",
+      "errorTitle": "Error al Enviar",
+      "errorMessage": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo."
     }
   },
   "footer": {
