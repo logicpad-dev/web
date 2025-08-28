@@ -10,8 +10,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
-import { useTransition } from 'react';
-import { submitInquiry } from '@/app/actions';
+import { useTransition, useState } from 'react';
+// import { submitInquiry } from '@/app/actions';
 import { services } from '@/lib/services';
 
 type ContactProps = {
@@ -55,7 +55,7 @@ const formSchema = z.object({
 
 export default function ContactSection({ dictionary }: ContactProps) {
   const { toast } = useToast();
-  const [isSubmitting, startSubmitTransition] = useTransition();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -67,22 +67,18 @@ export default function ContactSection({ dictionary }: ContactProps) {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    startSubmitTransition(async () => {
-      const result = await submitInquiry(values);
-      if (result.success) {
-        toast({
-          title: dictionary.form.successTitle,
-          description: dictionary.form.successMessage,
-        });
-        form.reset();
-      } else {
-        toast({
-          title: dictionary.form.errorTitle,
-          description: result.message || dictionary.form.errorMessage,
-          variant: 'destructive',
-        });
-      }
+    setIsSubmitting(true);
+    // Server-side submission is not possible with static export.
+    // You can integrate a third-party form service like Formspree or Netlify Forms.
+    console.log('Form values:', values);
+    toast({
+      title: 'Form Submitted (Simulated)',
+      description: 'In a real application, this would send the inquiry.',
     });
+    setTimeout(() => {
+      setIsSubmitting(false);
+      form.reset();
+    }, 1000);
   }
 
   return (

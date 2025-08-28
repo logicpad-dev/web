@@ -1,4 +1,7 @@
-'use server';
+// 'use server';
+// This file is disabled because Server Actions are not compatible with static export.
+// You will need to use a third-party form service for the contact form
+// when deploying to a static hosting provider like GitHub Pages.
 
 import * as z from 'zod';
 import nodemailer from 'nodemailer';
@@ -11,23 +14,24 @@ const formSchema = z.object({
 });
 
 export async function submitInquiry(data: z.infer<typeof formSchema>) {
+  console.log('Form submission is disabled for static export.');
+  // The original email sending logic is commented out.
+  /*
   console.log('New inquiry received:', data);
 
-  // Configure Nodemailer to use a third-party SMTP service.
-  // Replace the placeholder values with the actual credentials from your provider (e.g., SendGrid, Mailgun).
   const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST, // e.g., 'smtp.sendgrid.net'
+    host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT || 587),
-    secure: (process.env.SMTP_PORT || 587) === '465', // true for 465, false for other ports
+    secure: (process.env.SMTP_PORT || 587) === '465',
     auth: {
-      user: process.env.SMTP_USER, // Your username (often 'apikey' for services like SendGrid)
-      pass: process.env.SMTP_PASS, // Your password or API key
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
     },
   });
 
   const mailOptions = {
     from: `"${data.name}" <${data.email}>`,
-    to: process.env.EMAIL_TO, // The email address that will receive the inquiries
+    to: process.env.EMAIL_TO,
     subject: `New Inquiry: ${data.service}`,
     text: `
       Name: ${data.name}
@@ -55,4 +59,6 @@ export async function submitInquiry(data: z.infer<typeof formSchema>) {
     console.error('Error sending email:', error);
     return { success: false, message: 'Sorry, there was an error sending your message. Please try again later.' };
   }
+  */
+  return { success: true, message: 'This is a simulated success message.' };
 }
