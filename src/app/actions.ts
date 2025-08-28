@@ -13,20 +13,21 @@ const formSchema = z.object({
 export async function submitInquiry(data: z.infer<typeof formSchema>) {
   console.log('New inquiry received:', data);
 
+  // Configure Nodemailer to use a third-party SMTP service.
+  // Replace the placeholder values with the actual credentials from your provider (e.g., SendGrid, Mailgun).
   const transporter = nodemailer.createTransport({
-    // IMPORTANT: You'll need to configure your email provider here.
-    // This is an example for Gmail, but you should use a dedicated email
-    // service like SendGrid, Mailgun, or Amazon SES for production.
-    service: 'gmail',
+    host: process.env.SMTP_HOST, // e.g., 'smtp.sendgrid.net'
+    port: Number(process.env.SMTP_PORT || 587),
+    secure: (process.env.SMTP_PORT || 587) === '465', // true for 465, false for other ports
     auth: {
-      user: process.env.EMAIL_USER, // Add your email address to .env
-      pass: process.env.EMAIL_PASS, // Add your email password or app-specific password to .env
+      user: process.env.SMTP_USER, // Your username (often 'apikey' for services like SendGrid)
+      pass: process.env.SMTP_PASS, // Your password or API key
     },
   });
 
   const mailOptions = {
     from: `"${data.name}" <${data.email}>`,
-    to: 'your-receiving-email@example.com', // Change this to the email address where you want to receive inquiries
+    to: process.env.EMAIL_TO, // The email address that will receive the inquiries
     subject: `New Inquiry: ${data.service}`,
     text: `
       Name: ${data.name}
