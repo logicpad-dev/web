@@ -5,8 +5,8 @@ const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
-  basePath: isGithubActions ? '/<your-repo-name>' : '', // Replace <your-repo-name> with your repository name
-  assetPrefix: isGithubActions ? '/<your-repo-name>/' : '', // Replace <your-repo-name> with your repository name
+  // The basePath is configured dynamically by the deploy-pages action.
+  // No need to set it here manually.
   typescript: {
     ignoreBuildErrors: true,
   },
