@@ -10,8 +10,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
-import { useCallback, useState, useTransition } from 'react';
-import { handleSuggestService, submitInquiry } from '@/app/actions';
+import { useTransition } from 'react';
+import { submitInquiry } from '@/app/actions';
 import { services } from '@/lib/services';
 
 const formSchema = z.object({
@@ -29,20 +29,9 @@ const formSchema = z.object({
   }),
 });
 
-function debounce<T extends (...args: any[]) => any>(func: T, delay: number) {
-  let timeout: NodeJS.Timeout;
-  return (...args: Parameters<T>): Promise<ReturnType<T>> => {
-    clearTimeout(timeout);
-    return new Promise(resolve => {
-      timeout = setTimeout(() => resolve(func(...args)), delay);
-    });
-  };
-}
-
 export default function ContactSection() {
   const { toast } = useToast();
   const [isSubmitting, startSubmitTransition] = useTransition();
-  const [isSuggesting, setIsSuggesting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -52,26 +41,6 @@ export default function ContactSection() {
       inquiry: '',
     },
   });
-
-  const debouncedSuggestService = useCallback(
-    debounce(async (inquiry: string) => {
-      if (inquiry.length > 10) {
-        setIsSuggesting(true);
-        const suggested = await handleSuggestService(inquiry);
-        if (suggested && services.includes(suggested)) {
-          form.setValue('service', suggested, { shouldValidate: true });
-        }
-        setIsSuggesting(false);
-      }
-    }, 1000),
-    [form]
-  );
-
-  const onInquiryChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const value = e.target.value;
-    form.setValue('inquiry', value, { shouldValidate: true });
-    debouncedSuggestService(value);
-  };
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     startSubmitTransition(async () => {
@@ -146,7 +115,6 @@ export default function ContactSection() {
                         placeholder="Describe your project or inquiry..."
                         className="min-h-[120px]"
                         {...field}
-                        onChange={onInquiryChange}
                       />
                     </FormControl>
                     <FormMessage />
@@ -158,10 +126,7 @@ export default function ContactSection() {
                 name="service"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="flex items-center gap-2">
-                      Interested Service
-                      {isSuggesting && <Loader2 className="h-4 w-4 animate-spin text-primary" />}
-                    </FormLabel>
+                    <FormLabel>Interested Service</FormLabel>
                     <Select onValueChange={field.onChange} value={field.value}>
                       <FormControl>
                         <SelectTrigger>
