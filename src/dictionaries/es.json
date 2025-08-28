@@ -1,0 +1,96 @@
+{
+  "header": {
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "contact": "Contacto",
+    "getQuote": "Obtener Cotización",
+    "language": "Idioma",
+    "english": "Inglés",
+    "spanish": "Español"
+  },
+  "hero": {
+    "title": "Construyendo Excelencia Digital para",
+    "subtitle": "Construimos soluciones de software hermosas, rápidas y seguras para ayudar a tu negocio a crecer. Desde el concepto hasta el lanzamiento, somos tu socio de desarrollo dedicado.",
+    "ctaProject": "Iniciar un Proyecto",
+    "ctaWork": "Ver Nuestro Trabajo"
+  },
+  "services": {
+    "tag": "Nuestros Servicios",
+    "title": "Lo Que Hacemos",
+    "subtitle": "Ofrecemos un conjunto completo de servicios de desarrollo de software para dar vida a tus ideas.",
+    "web": {
+      "title": "Desarrollo Web",
+      "description": "Sitios web y aplicaciones web de alto rendimiento utilizando tecnología moderna como React, Next.js y Node.js."
+    },
+    "mobile": {
+      "title": "Desarrollo de Aplicaciones Móviles",
+      "description": "Creación de aplicaciones móviles nativas hermosas e intuitivas para iOS y Android que ofrecen experiencias de usuario fluidas."
+    },
+    "design": {
+      "title": "Diseño UI/UX",
+      "description": "Interfaces atractivas y fáciles de usar que son estéticamente agradables y altamente funcionales."
+    },
+    "cloud": {
+      "title": "Nube y DevOps",
+      "description": "Aprovechando plataformas en la nube como Firebase y AWS para construir infraestructura escalable y optimizar los procesos."
+    }
+  },
+  "portfolio": {
+    "tag": "Nuestro Trabajo",
+    "title": "Proyectos Destacados",
+    "subtitle": "Echa un vistazo a algunos de los increíbles proyectos que hemos entregado a nuestros clientes.",
+    "all": "Todos",
+    "web": "Web",
+    "mobile": "Móvil",
+    "projects": {
+      "invoice": {
+        "title": "Aplicación de Facturas",
+        "category": "Web",
+        "description": "Una aplicación web para crear, enviar y gestionar facturas con generación de PDF.",
+        "tags": ["React", "Node.js", "Generación de PDF"]
+      },
+      "trash": {
+        "title": "Sistema de Gestión de Basura",
+        "category": "Web",
+        "description": "Un sistema para optimizar las rutas y horarios de recolección de residuos utilizando datos y mapas en tiempo real.",
+        "tags": ["Next.js", "Firebase", "API de Mapas"]
+      },
+      "appDev": {
+        "title": "Desarrollo de Aplicaciones",
+        "category": "Móvil",
+        "description": "Desarrollo de aplicaciones móviles personalizadas para plataformas iOS y Android.",
+        "tags": ["React Native", "iOS", "Android"]
+      },
+      "webDesign": {
+        "title": "Diseño Web",
+        "category": "Web",
+        "description": "Diseño de interfaces y experiencias de usuario hermosas e intuitivas para aplicaciones web.",
+        "tags": ["Figma", "UI/UX", "CSS Grid"]
+      }
+    }
+  },
+  "contact": {
+    "tag": "Contáctanos",
+    "title": "¿Tienes un proyecto en mente?",
+    "subtitle": "Nos encantaría saber de ti. Completa el formulario y nos pondremos en contacto contigo lo antes posible.",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Juan Pérez",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "juan@ejemplo.com",
+      "help": "¿Cómo podemos ayudarte?",
+      "helpPlaceholder": "Describe tu proyecto o consulta...",
+      "service": "Servicio de Interés",
+      "selectService": "Selecciona un servicio",
+      "submit": "Enviar Consulta",
+      "submitting": "Enviando...",
+      "successTitle": "¡Éxito!",
+      "successMessage": "¡Gracias por tu consulta! Nos pondremos en contacto contigo en breve.",
+      "errorTitle": "Error",
+      "errorMessage": "Lo sentimos, hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde."
+    }
+  },
+  "footer": {
+    "copyright": "Todos los derechos reservados."
+  }
+}

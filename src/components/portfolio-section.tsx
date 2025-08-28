@@ -6,57 +6,76 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
-const projects = [
-  {
-    title: 'Invoice App',
-    category: 'Web',
-    description: 'A web-based application for creating, sending, and managing invoices with PDF generation.',
-    image: 'https://picsum.photos/id/24/600/400',
-    hint: 'messy desk papers',
-    tags: ['React', 'Node.js', 'PDF Generation'],
-  },
-  {
-    title: 'Trash Management System',
-    category: 'Web',
-    description: 'A system to optimize waste collection routes and schedules using real-time data and mapping.',
-    image: 'https://picsum.photos/id/1015/600/400',
-    hint: 'elegant trash bins',
-    tags: ['Next.js', 'Firebase', 'Mapping API'],
-  },
-  {
-    title: 'App Development',
-    category: 'Mobile',
-    description: 'Custom mobile application development for both iOS and Android platforms.',
-    image: 'https://picsum.photos/id/160/600/400',
-    hint: 'mobile app',
-    tags: ['React Native', 'iOS', 'Android'],
-  },
-  {
-    title: 'Web Design',
-    category: 'Web',
-    description: 'Designing beautiful and intuitive user interfaces and experiences for web applications.',
-    image: 'https://picsum.photos/id/5/600/400',
-    hint: 'web design',
-    tags: ['Figma', 'UI/UX', 'CSS Grid'],
-  },
-];
+type Project = {
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  hint: string;
+  tags: string[];
+};
 
-const categories = ['All', 'Web', 'Mobile'];
+type PortfolioProps = {
+  dictionary: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    all: string;
+    web: string;
+    mobile: string;
+    projects: {
+      invoice: Omit<Project, 'image' | 'hint'>;
+      trash: Omit<Project, 'image' | 'hint'>;
+      appDev: Omit<Project, 'image' | 'hint'>;
+      webDesign: Omit<Project, 'image' | 'hint'>;
+    };
+  };
+};
 
-export default function PortfolioSection() {
+export default function PortfolioSection({ dictionary }: PortfolioProps) {
   const [filter, setFilter] = useState('All');
 
-  const filteredProjects = projects.filter(p => filter === 'All' || p.category === filter);
+  const projects: Project[] = [
+    {
+      ...dictionary.projects.invoice,
+      image: 'https://picsum.photos/id/24/600/400',
+      hint: 'messy desk papers',
+    },
+    {
+      ...dictionary.projects.trash,
+      image: 'https://picsum.photos/id/1015/600/400',
+      hint: 'elegant trash bins',
+    },
+    {
+      ...dictionary.projects.appDev,
+      image: 'https://picsum.photos/id/160/600/400',
+      hint: 'mobile app',
+    },
+    {
+      ...dictionary.projects.webDesign,
+      image: 'https://picsum.photos/id/5/600/400',
+      hint: 'web design',
+    },
+  ];
+
+  const categories = [dictionary.all, dictionary.web, dictionary.mobile];
+  const categoryMap: { [key: string]: string } = {
+    [dictionary.all]: 'All',
+    [dictionary.web]: 'Web',
+    [dictionary.mobile]: 'Mobile',
+  };
+
+  const filteredProjects = projects.filter(p => categoryMap[filter] === 'All' || p.category === categoryMap[filter]);
 
   return (
     <section id="portfolio" className="w-full py-20 md:py-32">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Our Work</div>
-            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">Featured Projects</h2>
+            <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">{dictionary.tag}</div>
+            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">{dictionary.title}</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Check out some of the amazing projects we've delivered for our clients.
+              {dictionary.subtitle}
             </p>
           </div>
         </div>

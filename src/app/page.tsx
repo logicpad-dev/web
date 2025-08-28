@@ -1,21 +1,6 @@
-import Header from '@/components/header';
-import HeroSection from '@/components/hero-section';
-import ServicesSection from '@/components/services-section';
-import PortfolioSection from '@/components/portfolio-section';
-import ContactSection from '@/components/contact-section';
-import Footer from '@/components/footer';
+import { redirect } from 'next/navigation'
+import { i18n } from '@/i18n-config'
 
-export default function Home() {
-  return (
-    <div className="flex flex-col min-h-screen bg-background">
-      <Header />
-      <main className="flex-grow">
-        <HeroSection />
-        <ServicesSection />
-        <PortfolioSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
-  );
+export default function RootPage() {
+  redirect(`/${i18n.defaultLocale}`)
 }

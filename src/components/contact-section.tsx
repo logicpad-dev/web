@@ -14,6 +14,30 @@ import { useTransition } from 'react';
 import { submitInquiry } from '@/app/actions';
 import { services } from '@/lib/services';
 
+type ContactProps = {
+  dictionary: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    form: {
+      name: string;
+      namePlaceholder: string;
+      email: string;
+      emailPlaceholder: string;
+      help: string;
+      helpPlaceholder: string;
+      service: string;
+      selectService: string;
+      submit: string;
+      submitting: string;
+      successTitle: string;
+      successMessage: string;
+      errorTitle: string;
+      errorMessage: string;
+    };
+  };
+};
+
 const formSchema = z.object({
   name: z.string().min(2, {
     message: 'Name must be at least 2 characters.',
@@ -29,7 +53,7 @@ const formSchema = z.object({
   }),
 });
 
-export default function ContactSection() {
+export default function ContactSection({ dictionary }: ContactProps) {
   const { toast } = useToast();
   const [isSubmitting, startSubmitTransition] = useTransition();
 
@@ -47,14 +71,14 @@ export default function ContactSection() {
       const result = await submitInquiry(values);
       if (result.success) {
         toast({
-          title: 'Success!',
-          description: result.message,
+          title: dictionary.form.successTitle,
+          description: dictionary.form.successMessage,
         });
         form.reset();
       } else {
         toast({
-          title: 'Error',
-          description: result.message || 'Something went wrong.',
+          title: dictionary.form.errorTitle,
+          description: result.message || dictionary.form.errorMessage,
           variant: 'destructive',
         });
       }
@@ -65,12 +89,12 @@ export default function ContactSection() {
     <section id="contact" className="w-full py-20 md:py-32 bg-secondary/50">
       <div className="container grid items-center justify-center gap-8 px-4 text-center md:px-6 lg:grid-cols-2 lg:gap-16 lg:text-left">
         <div className="space-y-4">
-          <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Contact Us</div>
+          <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">{dictionary.tag}</div>
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Have a project in mind?
+            {dictionary.title}
           </h2>
           <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            We'd love to hear from you. Fill out the form and we'll get back to you as soon as possible.
+            {dictionary.subtitle}
           </p>
         </div>
         <div className="w-full max-w-md mx-auto lg:max-w-none">
@@ -82,9 +106,9 @@ export default function ContactSection() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Name</FormLabel>
+                      <FormLabel>{dictionary.form.name}</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} />
+                        <Input placeholder={dictionary.form.namePlaceholder} {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -95,9 +119,9 @@ export default function ContactSection() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel>{dictionary.form.email}</FormLabel>
                       <FormControl>
-                        <Input placeholder="john@example.com" type="email" {...field} />
+                        <Input placeholder={dictionary.form.emailPlaceholder} type="email" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -109,10 +133,10 @@ export default function ContactSection() {
                 name="inquiry"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>How can we help?</FormLabel>
+                    <FormLabel>{dictionary.form.help}</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="Describe your project or inquiry..."
+                        placeholder={dictionary.form.helpPlaceholder}
                         className="min-h-[120px]"
                         {...field}
                       />
@@ -126,11 +150,11 @@ export default function ContactSection() {
                 name="service"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Interested Service</FormLabel>
+                    <FormLabel>{dictionary.form.service}</FormLabel>
                     <Select onValueChange={field.onChange} value={field.value}>
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Select a service" />
+                          <SelectValue placeholder={dictionary.form.selectService} />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
@@ -147,7 +171,7 @@ export default function ContactSection() {
               />
               <Button type="submit" className="w-full" disabled={isSubmitting}>
                 {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                Send Inquiry
+                {isSubmitting ? dictionary.form.submitting : dictionary.form.submit}
               </Button>
             </form>
           </Form>
