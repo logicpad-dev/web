@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Mountain, Github, Twitter, Linkedin } from 'lucide-react';
+import { Mountain } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -11,15 +11,7 @@ export default function Footer() {
         </div>
         <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} Localpad. All rights reserved.</p>
         <div className="flex items-center gap-4">
-          <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary">
-            <Twitter className="h-5 w-5" />
-          </Link>
-          <Link href="#" aria-label="GitHub" className="text-muted-foreground hover:text-primary">
-            <Github className="h-5 w-5" />
-          </Link>
-          <Link href="#" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary">
-            <Linkedin className="h-5 w-5" />
-          </Link>
+          {/* Social links removed as per request */}
         </div>
       </div>
     </footer>

@@ -8,52 +8,36 @@ import { Badge } from '@/components/ui/badge';
 
 const projects = [
   {
-    title: 'E-commerce Platform',
+    title: 'Invoice App',
     category: 'Web',
-    description: 'A full-featured online store with a custom CMS, payment integration, and a responsive design.',
+    description: 'A web-based application for creating, sending, and managing invoices with PDF generation.',
     image: 'https://picsum.photos/600/400?random=1',
-    hint: 'store website',
-    tags: ['Next.js', 'Stripe', 'Tailwind CSS'],
+    hint: 'invoice app',
+    tags: ['React', 'Node.js', 'PDF Generation'],
   },
   {
-    title: 'Fitness Tracker App',
-    category: 'Mobile',
-    description: 'A mobile application for tracking workouts, setting goals, and competing with friends.',
+    title: 'Trash Management System',
+    category: 'Web',
+    description: 'A system to optimize waste collection routes and schedules using real-time data and mapping.',
     image: 'https://picsum.photos/600/400?random=2',
-    hint: 'fitness app',
-    tags: ['React Native', 'Firebase', 'Chart.js'],
+    hint: 'map dashboard',
+    tags: ['Next.js', 'Firebase', 'Mapping API'],
   },
   {
-    title: 'SaaS Dashboard',
-    category: 'Web',
-    description: 'A complex data visualization dashboard for a business intelligence SaaS product.',
+    title: 'App Development',
+    category: 'Mobile',
+    description: 'Custom mobile application development for both iOS and Android platforms.',
     image: 'https://picsum.photos/600/400?random=3',
-    hint: 'dashboard analytics',
-    tags: ['React', 'D3.js', 'Node.js'],
+    hint: 'mobile app',
+    tags: ['React Native', 'iOS', 'Android'],
   },
   {
-    title: 'Recipe Sharing App',
-    category: 'Mobile',
-    description: 'A social platform for users to share and discover new recipes, with ratings and comments.',
-    image: 'https://picsum.photos/600/400?random=4',
-    hint: 'cooking app',
-    tags: ['Flutter', 'Supabase', 'Dart'],
-  },
-  {
-    title: 'Corporate Website',
+    title: 'Web Design',
     category: 'Web',
-    description: 'A professional and modern website for a financial consulting firm.',
-    image: 'https://picsum.photos/600/400?random=5',
-    hint: 'business website',
-    tags: ['Gatsby', 'Contentful', 'GraphQL'],
-  },
-  {
-    title: 'Real-time Chat App',
-    category: 'Mobile',
-    description: 'A cross-platform mobile chat application with end-to-end encryption.',
-    image: 'https://picsum.photos/600/400?random=6',
-    hint: 'chat interface',
-    tags: ['React Native', 'WebSocket', 'MongoDB'],
+    description: 'Designing beautiful and intuitive user interfaces and experiences for web applications.',
+    image: 'https://picsum.photos/600/400?random=4',
+    hint: 'website design',
+    tags: ['Figma', 'UI/UX', 'CSS Grid'],
   },
 ];
 
@@ -88,7 +72,7 @@ export default function PortfolioSection() {
             </Button>
           ))}
         </div>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
           {filteredProjects.map((project, index) => (
             <Card key={index} className="overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-300">
               <CardHeader className="p-0">
